@@ -27,7 +27,9 @@ main {
             bottom: -700px;
             height: 1000px;
             width: 1000px;
-            animation: globe-spin 30s linear infinite;
+            &.globe-spin {
+                animation: globe-spin 30s linear infinite;
+            }
         }
         &#character {
             background-image: url(img/placeholder-stand1.png);
@@ -35,8 +37,12 @@ main {
             height: 375px;
             width: 250px;
             bottom: 270px;
-            /* animation: character-idle 1s infinite; */
-            animation: character-walk 2.5s infinite;
+            &.idle-anim {
+                animation: character-idle 1s infinite;
+            }
+            &.walk-anim{
+                animation: character-walk 2.5s infinite;
+            }
         }
         &#title-box {
             top: 20px;
@@ -54,6 +60,12 @@ main {
                 opacity: 80%;
             }
         }
+    }
+}
+
+@media (max-width: 750px), screen and (orientation: portrait){
+    main {
+        width: 100vw;
     }
 }
 
